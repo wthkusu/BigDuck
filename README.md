@@ -45,7 +45,7 @@ Functional requirements
 
 5.Once the conversion is completed, the system must display the converted amount clearly, along with the source and target currencies and the current exchange rate used for the calculation.
 
-non functional
+Non Functional Requirements
 
 1.the application must respond to user input and display conversion results within 5 seconds, even during peak usage times.
 
