@@ -44,3 +44,11 @@ Functional requirements
 4.The application must maintain an up-to-date list of supported currencies and their respective codes, allowing users to select from these currencies when performing conversions.
 
 5.Once the conversion is completed, the system must display the converted amount clearly, along with the source and target currencies and the current exchange rate used for the calculation.
+
+non functional
+
+1.the application must respond to user input and display conversion results within 5 seconds, even during peak usage times.
+
+2.The app should have an intuitive user interface, allowing users of varying technical skills to navigate and perform conversions easily.
+
+3.In the event of a system failure, appropriate error handling should be in place to inform users and allow for smooth recovery.
