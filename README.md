@@ -1,5 +1,9 @@
 App Purpose:
 1. Display chosen currency exchange rates.
+2. The app allows users to quickly and accurately convert amounts between various currencies based on current exchange rates.
+3. Designed for user-friendliness, the app enables individuals to input amounts and select currencies with minimal effort, making it accessible for both casual users and frequent travelers.
+4. It can also serve as an educational tool, helping users learn about currency values and market fluctuations, enhancing their understanding of global finance.
+5. The app serves as a handy tool for travelers, businesses, and anyone dealing with multiple currencies.
 
 User Stories:
 1. As a user, I should be able to create a user account.
