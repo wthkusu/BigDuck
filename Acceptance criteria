@@ -8,4 +8,4 @@
 
 4.User Interface and Usability: The user interface must be user-friendly, allowing users to easily input amounts and select currencies. Users should be able to perform a conversion.
 
-5.Performance Requirements: The system should return the conversion result within 5 seconds of input submission. If there is a delay or failure in retrieving exchange rates, the system must display a clear error message to the user.
+5.Performance Requirements: The system should return the conversion result within 1 seconds of input submission. If there is a delay or failure in retrieving exchange rates, the system must display a clear error message to the user.
