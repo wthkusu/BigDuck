@@ -27,3 +27,16 @@ The user interface must be  user-friendly, allowing users to easily input amount
 
 5.Performance Requirements:
 The system should return the conversion result within 5 seconds of input submission. If there is a delay or failure in retrieving exchange rates, the system must display a clear error message to the user.
+
+
+Functional requirements
+
+1.The system must allow users to input a numeric amount and select both the source currency and target currency from a list of supported currencies.
+
+2.The application must retrieve real-time exchange rates for the selected currency pair. The system should handle errors and display a user-friendly message if the data cannot be retrieved.
+
+3.The system must accurately calculate the converted amount by multiplying the input amount by the retrieved exchange rate. The result should be rounded to two decimal places.
+
+4.The application must maintain an up-to-date list of supported currencies and their respective codes, allowing users to select from these currencies when performing conversions.
+
+5.Once the conversion is completed, the system must display the converted amount clearly, along with the source and target currencies and the current exchange rate used for the calculation.
