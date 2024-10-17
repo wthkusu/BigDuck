@@ -6,6 +6,6 @@
 
 3.Correct Conversion Calculation: The application must correctly calculate the converted amount based on the input amount and the retrieved exchange rate. The calculated result should be displayed with two decimal points of precision.
 
-4.User Interface and Usability: The user interface must be user-friendly, allowing users to easily input amounts and select currencies. Users should be able to perform a conversion.
+4.Usability: It should be easy to use, allowing users to quickly enter amounts and select currencies. Users should be able to perform a conversion.
 
 5.Performance Requirements: The system should return the conversion result within 1 seconds of input submission. If there is a delay or failure in retrieving exchange rates, the system must display a clear error message to the user.
