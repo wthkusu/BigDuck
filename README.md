@@ -2,6 +2,7 @@ The Currency Converter app provides users with a simple and efficient way to con
 
 
 FEATURES:-
+
 1.Real-Time Conversion: Accurately converts currency amounts based on the latest exchange rates.
 
 2.User-Friendly Interface: Intuitive design for easy navigation and quick conversions.
