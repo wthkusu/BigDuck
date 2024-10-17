@@ -14,7 +14,7 @@ Functional requirements
 
 Non Functional Requirements
 
-1.the application must respond to user input and display conversion results within 1 seconds, even during peak usage times.
+1.The application must respond to user input and display conversion results within 1 seconds, even during peak usage times.
 
 2.The app should have an intuitive user interface, allowing users of varying technical skills to navigate and perform conversions easily.
 
