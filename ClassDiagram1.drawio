@@ -1,0 +1,48 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1.1 Safari/605.1.15" version="25.0.1">
+  <diagram name="Page-1" id="ctuzxjG5MW2nIgfNlTjr">
+    <mxGraphModel dx="954" dy="647" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-1" value="currency converter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="50" width="390" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-2" value="-exchangeRates:Dictionary&amp;lt;String,Double&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="oOIjPioGq_9B5gfG0-Rm-1">
+          <mxGeometry y="26" width="390" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="oOIjPioGq_9B5gfG0-Rm-1">
+          <mxGeometry y="52" width="390" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-4" value="&lt;div&gt;&lt;div&gt;+addExchangeRate(currencycode :String, rate:Double):void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+convert(amount: Double, fromCurrency :string, toCurrency:String):Double&lt;/div&gt;&lt;div&gt;+updateExchangeRate(currencycode :string, rate:Double):void&lt;/div&gt;&lt;div&gt;+getExchangeRate(currencycode: string): Double&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="oOIjPioGq_9B5gfG0-Rm-1">
+          <mxGeometry y="60" width="390" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.685;entryY=-0.006;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="oOIjPioGq_9B5gfG0-Rm-1" target="oOIjPioGq_9B5gfG0-Rm-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-7" value="currency" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="300" width="380" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-8" value="&lt;div&gt;-code: string&lt;div&gt;-symbol: string&lt;/div&gt;&lt;/div&gt;&lt;div&gt;-name: string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="oOIjPioGq_9B5gfG0-Rm-7">
+          <mxGeometry y="26" width="380" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="oOIjPioGq_9B5gfG0-Rm-7">
+          <mxGeometry y="90" width="380" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-10" value="+displayInfo() : string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="oOIjPioGq_9B5gfG0-Rm-7">
+          <mxGeometry y="98" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="oOIjPioGq_9B5gfG0-Rm-11" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.092;entryY=-0.032;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="oOIjPioGq_9B5gfG0-Rm-4" target="oOIjPioGq_9B5gfG0-Rm-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="390" y="340" as="sourcePoint" />
+            <mxPoint x="550" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="170" />
+              <mxPoint x="540" y="250" />
+              <mxPoint x="425" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
