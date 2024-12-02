@@ -1,0 +1,21 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CurrencyCodeTest {
+
+    @Test
+    public void testIsValidCurrencyCode() {
+        // Valid code
+        assertTrue(CurrencyCode.isValidCurrencyCode("USD"));
+        // Invalid code
+        assertFalse(CurrencyCode.isValidCurrencyCode("XYZ"));
+    }
+
+    @Test
+    public void testGetCurrencyName() {
+        // Known currency
+        assertEquals("United States Dollar", CurrencyCode.getCurrencyName("USD"));
+        // Unknown currency
+        assertEquals("Unknown Currency", CurrencyCode.getCurrencyName("XYZ"));
+    }
+}
