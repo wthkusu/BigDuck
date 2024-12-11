@@ -1,0 +1,81 @@
+package com.mycompany.currencyconverter;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class CurrencyConverterUITest {
+
+    private CurrencyConverterUI ui;
+
+    @BeforeEach
+    void setUp() {
+        ui = new CurrencyConverterUI();
+        ui.initializeRates();
+    }
+
+    @Test
+    void testValidConversion() {
+        // Mock user input
+        String simulatedUserInput = "USD\nGBP\n100.0\n";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedUserInput.getBytes());
+        System.setIn(inputStream);
+
+        // Capture the output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Run the user input method
+        ui.getUserInput();
+
+        // Check output for correct result
+        String output = outputStream.toString();
+        assertTrue(output.contains("Converted amount: 78.00 GBP"),
+                "Output should show the correct converted amount for USD to GBP.");
+    }
+
+    @Test
+    void testInvalidCurrencyConversion() {
+        // Mock user input
+        String simulatedUserInput = "USD\nXYZ\n100.0\n"; // XYZ is not a valid currency
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedUserInput.getBytes());
+        System.setIn(inputStream);
+
+        // Capture the output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Run the user input method
+        ui.getUserInput();
+
+        // Check output for error message
+        String output = outputStream.toString();
+        assertTrue(output.contains("Exchange rate not available for: USD_TO_XYZ"),
+                "Output should indicate an error for an unsupported currency.");
+    }
+
+    @Test
+    void testZeroAmountConversion() {
+        // Mock user input
+        String simulatedUserInput = "USD\nEUR\n0.0\n";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedUserInput.getBytes());
+        System.setIn(inputStream);
+
+        // Capture the output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Run the user input method
+        ui.getUserInput();
+
+        // Check output for zero amount conversion
+        String output = outputStream.toString();
+        assertTrue(output.contains("Converted amount: 0.00 EUR"),
+                "Output should show zero converted amount for zero input.");
+    }
+}
