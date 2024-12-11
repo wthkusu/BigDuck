@@ -1,0 +1,64 @@
+package com.mycompany.currencyconverter;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+    class CurrencyConverterTest {
+
+        private CurrencyConverter converter;
+
+        @BeforeEach
+        void setUp() {
+            converter = new CurrencyConverter();
+            converter.addExchangeRate("USD", "EUR", 0.85);
+            converter.addExchangeRate("EUR", "USD", 1.18);
+            converter.addExchangeRate("USD", "JPY", 110.0);
+        }
+
+        @Test
+        void testAddExchangeRate() {
+            converter.addExchangeRate("GBP", "USD", 1.25);
+            double rate = converter.convert("GBP", "USD", 100.0);
+            assertEquals(125.0, rate, "GBP to USD conversion rate should be correctly added and used.");
+        }
+
+        @Test
+        void testConvert() {
+            double result = converter.convert("USD", "EUR", 100.0);
+            assertEquals(85.0, result, 0.01, "USD to EUR conversion should return correct value.");
+
+            result = converter.convert("EUR", "USD", 100.0);
+            assertEquals(118.0, result, 0.01, "EUR to USD conversion should return correct value.");
+        }
+
+        @Test
+        void testConvertWithUnavailableExchangeRate() {
+            Exception exception = assertThrows(IllegalArgumentException.class, () ->
+                    converter.convert("USD", "GBP", 100.0));
+            assertEquals("Exchange rate not available for: USD_TO_GBP", exception.getMessage(),
+                    "Should throw exception for unavailable exchange rate.");
+        }
+
+        @Test
+        void testListCurrencies() {
+            Set<String> currencies = converter.listCurrencies();
+            assertTrue(currencies.contains("USD_TO_EUR"), "USD_TO_EUR should be listed.");
+            assertTrue(currencies.contains("EUR_TO_USD"), "EUR_TO_USD should be listed.");
+            assertTrue(currencies.contains("USD_TO_JPY"), "USD_TO_JPY should be listed.");
+            assertFalse(currencies.contains("GBP_TO_USD"), "GBP_TO_USD should not be listed unless added.");
+        }
+
+        @Test
+        void testAddExchangeRateAndOverride() {
+            // Add a new rate and override the existing rate
+            converter.addExchangeRate("USD", "EUR", 0.90);
+            double result = converter.convert("USD", "EUR", 100.0);
+            assertEquals(90.0, result, "USD to EUR conversion rate should reflect the updated value.");
+        }
+    }
+
+}
