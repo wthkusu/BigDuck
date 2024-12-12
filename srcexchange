@@ -1,0 +1,8 @@
+package com.mycompany.currencyconverter;
+public class ExchangeRateProvider {
+    // Simulated exchange rates data source
+    public double fetchExchangeRate(String fromCurrency, String toCurrency) {
+        // In a real-world scenario, connect to an API or database.
+        return 1.0; // Default rate for unsupported currencies (placeholder)
+    }
+}
