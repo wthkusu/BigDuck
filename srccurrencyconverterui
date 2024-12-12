@@ -1,0 +1,70 @@
+package com.mycompany.currencyconverter;
+
+import java.util.Scanner;
+
+public class CurrencyConverterUI {
+    private CurrencyConverter converter;
+
+    public CurrencyConverterUI() {
+        this.converter = new CurrencyConverter();
+    }
+
+    public void initializeRates() {
+        // Add exchange rates between USD, GBP, AED, INR, EUR, HUF, PKR, KWD, CHF, JPY
+        converter.addExchangeRate("USD", "GBP", 0.78); // 1 USD = 0.78 GBP
+        converter.addExchangeRate("USD", "AED", 3.67); // 1 USD = 3.67 AED
+        converter.addExchangeRate("USD", "INR", 83.0); // 1 USD = 83.0 INR
+        converter.addExchangeRate("USD", "EUR", 0.92); // 1 USD = 0.92 EUR
+        converter.addExchangeRate("USD", "HUF", 360.0); // 1 USD = 360.0 HUF
+        converter.addExchangeRate("USD", "PKR", 277.0); // 1 USD = 277.0 PKR
+        converter.addExchangeRate("USD", "KWD", 0.31); // 1 USD = 0.31 Kuwaiti Dinar
+        converter.addExchangeRate("USD", "CHF", 0.90); // 1 USD = 0.90 CHF
+        converter.addExchangeRate("USD", "JPY", 150.0); // 1 USD = 150.0 JPY
+
+        // Reverse rates
+        converter.addExchangeRate("GBP", "USD", 1 / 0.78);
+        converter.addExchangeRate("AED", "USD", 1 / 3.67);
+        converter.addExchangeRate("INR", "USD", 1 / 83.0);
+        converter.addExchangeRate("EUR", "USD", 1 / 0.92);
+        converter.addExchangeRate("HUF", "USD", 1 / 360.0);
+        converter.addExchangeRate("PKR", "USD", 1 / 277.0);
+        converter.addExchangeRate("KWD", "USD", 1 / 0.31);
+        converter.addExchangeRate("CHF", "USD", 1 / 0.90);
+        converter.addExchangeRate("JPY", "USD", 1 / 150.0);
+    }
+
+    public void getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Supported currency pairs:");
+        converter.listCurrencies().forEach(System.out::println);
+
+        System.out.print("Enter source currency (e.g., USD): ");
+        String fromCurrency = scanner.nextLine().toUpperCase();
+
+        System.out.print("Enter target currency (e.g., GBP): ");
+        String toCurrency = scanner.nextLine().toUpperCase();
+
+        System.out.print("Enter amount to convert: ");
+        double amount = scanner.nextDouble();
+
+        try {
+            double convertedAmount = converter.convert(fromCurrency, toCurrency, amount);
+            displayResult(convertedAmount, fromCurrency, toCurrency);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        scanner.close();
+    }
+
+    public void displayResult(double convertedAmount, String fromCurrency, String toCurrency) {
+        System.out.printf("Converted amount: %.2f %s\n", convertedAmount, toCurrency);
+    }
+
+    public static void main(String[] args) {
+        CurrencyConverterUI ui = new CurrencyConverterUI();
+        ui.initializeRates();
+        ui.getUserInput();
+    }
+}
