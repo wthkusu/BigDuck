@@ -1,0 +1,32 @@
+package com.mycompany.currencyconverter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class CurrencyConverter {
+    private Map<String, Double> exchangeRates;
+
+    public CurrencyConverter() {
+        this.exchangeRates = new HashMap<>();
+    }
+
+    // Add or update an exchange rate for any currency pair
+    public void addExchangeRate(String fromCurrency, String toCurrency, double rate) {
+        String key = fromCurrency + "_TO_" + toCurrency;
+        exchangeRates.put(key, rate);
+    }
+
+    // Convert an amount between any two currencies
+    public double convert(String fromCurrency, String toCurrency, double amount) {
+        String key = fromCurrency + "_TO_" + toCurrency;
+        if (!exchangeRates.containsKey(key)) {
+            throw new IllegalArgumentException("Exchange rate not available for: " + key);
+        }
+        return amount * exchangeRates.get(key);
+    }
+
+    // List all available currency pairs
+    public Set<String> listCurrencies() {
+        return exchangeRates.keySet();
+    }
+}
