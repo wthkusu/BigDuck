@@ -1,0 +1,24 @@
+package com.mycompany.currencyconverter;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class ExchangeRateProviderTest {
+
+    @Test
+    public void testFetchExchangeRate() {
+        ExchangeRateProvider exchangeRateProvider = new ExchangeRateProvider();
+
+        // Simulate supported currencies
+        assertEquals(1.0, exchangeRateProvider.fetchExchangeRate("USD", "EUR"),
+                "Default rate should be 1.0 for unsupported currencies.");
+
+        assertEquals(1.0, exchangeRateProvider.fetchExchangeRate("JPY", "GBP"),
+                "Default rate should be 1.0 for unsupported currencies.");
+
+        assertEquals(1.0, exchangeRateProvider.fetchExchangeRate("INR", "AUD"),
+                "Default rate should be 1.0 for unsupported currencies.");
+
+        // You can add mock functionality to test custom rates if implemented in the class
+    }
+}
